@@ -1,0 +1,164 @@
+{{> navbar-sidebar }}
+<!-- partial -->
+      <div class="main-panel">        
+        
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Agregar Productos a la Factura</h4>
+                  <form class="form-sample">
+                    <p class="card-description">
+                      A continuacion, llena el siguiente formulario con informacion de la Factura
+                    </p>
+                  </br> <!-- XD-->
+                    <p class="card-description" bold>
+                      <b> Informacion De Facturacion </b>
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Codigo</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="10001" disabled />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Fecha Creado</label>
+                          <div class="col-sm-9">
+                            <input class="form-control" placeholder="23/12/2021" disabled/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Cliente</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Nombre del Cliente"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Vendedor</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Nombre del Vendedor Responsable"/>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Tipo de Factura</label>
+                          <div class="col-sm-9">
+                            <select class="form-control">
+                              <option>Compra</option>
+                              <option>Venta</option>
+                              <option>Dev Compra</option>
+                              <option>Dev Venta</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Sucursal</label>
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
+                                Principal
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-5">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                                Suc Caobos Av 6
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Descripcion del Pedido</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Fecha Asentado</label>
+                        <div class="col-sm-9">
+                          <input class="form-control" placeholder="13/10/2022" />
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-check form-check-success">
+                          <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" checked>
+                            Confirmo a PapaDios que esta factura SERA asentada y no sera REVERSIBLE
+                          </label>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
+                    <p class="card-description col-md-6" bold>
+                      <b> Gestion Del pedido del Cliente </b>
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6 ">
+                      <div class="form-group row">
+                        <div class="col">
+                          <label>Producto</label>
+                          <div id="the-basics">
+                            <input class="typeahead" type="text" placeholder="Digita">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <label>Cantidad</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Cuanto">
+                          </div>
+                        </div>
+
+                        <div class="col">
+                          <label>Valor</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Como" />
+                          </div>
+                        </div>
+                        
+                      </div>
+                    
+                    
+                   
+                    <div class="form-check form-check-flat form-check-primary">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Confirmo que toda la informacion suministrada es correcta
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-success bg-green">Agregar Producto</button>
+                    <button class="btn btn-danger btn-rounded btn-fw">Limpiar Campos</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            
+      
+  
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <div>
+        </br>
+      </br>
+        {{> footer }}   

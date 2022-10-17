@@ -1,0 +1,101 @@
+  {{> navbar-sidebar }}
+
+      <div class="main-panel">  
+        <main>
+    <section class="inventory-nav">
+      <!-- Grupo de botones superiores -->
+      <nav class="nav justify-content-center btn-group" role="group" aria-label="Basic radio toggle button group">
+        <div class="nav-group--btn">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked onclick="mostrar_anadir()">
+          <label class="btn btn-outline-primary" for="btnradio1">AGREGAR PRODUCTO</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" onclick="mostrar_inventario()">
+          <label class="btn btn-outline-primary" for="btnradio2">OBSERVAR INVENTARIO</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" onclick="mostrar_subirInventario()">
+          <label class="btn btn-outline-primary" for="btnradio3">SUBIR INVENTARIO</label>
+        </div>
+      </nav>
+    </section>
+    <!-- Sección de agregar producto al inventario-->
+    <section class="inventory-addProduct" id="inventory-addProduct">
+      <div>
+        <h1 class="inventory-addProduct--title">AGREGAR PRODUCTO AL INVENTARIO</h1>
+      </div>
+      <div>
+        <form action="">
+          <div class="form-grid--wrapper">
+            <div class="form-field field1">
+              <label for="">ID</label>
+              <input type="text">
+            </div>
+            <div class="form-field field2">
+              <label for="">GRUPO</label>
+              <input type="text">
+            </div>
+            <div class="form-field field3">
+              <label for="">FECHA</label>
+              <input type="date">
+            </div>
+            <div class="form-field field4">
+              <label for="">PRODUCTO</label>
+              <input type="text">
+            </div>
+            <div class="form-field field5">
+              <label for="">UNIDADES</label>
+              <input type="number">
+            </div>
+            <div class="form-field field6">
+              <label for="">PRECIO DETAL</label>
+              <input type="number">
+            </div>
+            <div class="form-img field7">
+              <img src="http://www.solucioneslogisticas3pl.com/wp-content/uploads/2018/04/3pl-control-de-inventarios-660x330.png" alt="Empleado" width="160px">
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sección de ver los items del inventario -->
+    <section class="inventory-viewInventory" id="inventory-viewInventory">
+      <div class="inventory-header">
+        <h2 class="inventory-header--title">INVENTARIO</h2>
+        <div class="inventory-header--filter">
+          <h2 class="header-filter--title">FILTRAR</h2>
+          <span class="header-filter--img">
+            <img src="https://i.ibb.co/vk7Js86/simbolo-de-herramienta-llena-de-filtro.png" alt="Filtrar">
+          </span>
+        </div>
+      </div>
+      <div class="inventory-wrapper--table">
+      <table id="inventory-table">
+        <thead>
+          <th>ID</th>
+          <th>GRUPO</th>
+          <th>FECHA</th>
+          <th>PRODUCTO</th>
+          <th>UNIDADES</th>
+          <th>PRECIO</th>
+          <th>ACCIÓN</th>
+        </thead>
+
+      </table>
+      </div>
+    </section>
+
+    <!-- Sección de subir archivo excel de inventario -->
+    <section class="inventory-uploadInventory" id="inventory-uploadInventory">
+      <p>Cordial saludo usuario, en esta seccion podras subir tu inventario desde un archivo excel para cargar tu inventario de manera masiva con los siguientes parametros como se visualiza a continuacion</p>
+      <img src="https://i.ibb.co/J3vS7Yj/inventarioejemplo.jpg" alt="inventarioejemplo" border="0">
+      <div class="input-group">
+        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+        <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Enviar</button>
+      </div>
+    </section>
+
+  </main>
+  <div class="form-button--wrapper" id="form-button--wrapper">
+    <button type="submit" name="button" class="form-button--add" onclick="generar_celda()">AGREGAR</button>
+  </div>
+  </div>
