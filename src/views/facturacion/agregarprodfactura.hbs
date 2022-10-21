@@ -1,6 +1,23 @@
 {{> navbar-sidebar }}
+<head>
+  
+
+   <link rel="stylesheet" href="/css/typicons.css">
+  <link rel="stylesheet" href="/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/img/favicon.png" />
+
+
+</head>
 <!-- partial -->
-      <div class="main-panel">        
+       <div class="main-panel">        
         
             <div class="col-12 grid-margin">
               <div class="card">
@@ -35,7 +52,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Cliente</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nombre del Cliente"/>
+                            <input type="text" class="form-control" placeholder="Nombre del Cliente" required/>
                           </div>
                         </div>
                       </div>
@@ -43,7 +60,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Vendedor</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nombre del Vendedor Responsable"/>
+                            <input type="text" class="form-control" placeholder="Nombre del Vendedor Responsable" required/>
                           </div>
                         </div>
                       </div>
@@ -54,7 +71,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Tipo de Factura</label>
                           <div class="col-sm-9">
-                            <select class="form-control">
+                            <select class="form-control" disabled>
                               <option>Compra</option>
                               <option>Venta</option>
                               <option>Dev Compra</option>
@@ -63,94 +80,83 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Sucursal</label>
-                          <div class="col-sm-4">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
-                                Principal
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-sm-5">
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
-                                Suc Caobos Av 6
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
                      
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                       <div class="form-group">
                         <label for="exampleTextarea1">Descripcion del Pedido</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)"></textarea>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)" required></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Fecha Asentado</label>
                         <div class="col-sm-9">
-                          <input class="form-control" placeholder="13/10/2022" />
+                          <input class="form-control" placeholder="13/10/2022 required" />
                         </div>
-                        <div class="col-md-6">
-                        <div class="form-check form-check-success">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" checked>
-                            Confirmo a PapaDios que esta factura SERA asentada y no sera REVERSIBLE
-                          </label>
-                        </div>
-                      </div>
+                        
                       </div>
                     </div>
                     </div>
-                    <p class="card-description col-md-6" bold>
+                    <p class="card-description col-md-3 offset-md-3" bold>
                       <b> Gestion Del pedido del Cliente </b>
                     </p>
                     <div class="row">
-                      <div class="col-md-6 ">
+                      <div class="col-md-6 col-md-3 offset-md-3">
                       <div class="form-group row">
                         <div class="col">
                           <label>Producto</label>
                           <div id="the-basics">
-                            <input class="typeahead" type="text" placeholder="Digita">
+                            <input class="typeahead" type="text" placeholder="Digita" required>
                           </div>
                         </div>
                         <div class="col">
                           <label>Cantidad</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Cuanto">
+                            <input type="text" class="form-control" placeholder="Cuanto" required>
                           </div>
                         </div>
 
                         <div class="col">
                           <label>Valor</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Como" />
+                            <input type="text" class="form-control" placeholder="Como"  required />
                           </div>
                         </div>
                         
                       </div>
+                      </div>
                     
                     
                    
-                    <div class="form-check form-check-flat form-check-primary">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Confirmo que toda la informacion suministrada es correcta
-                      </label>
-                    </div>
-                    <button type="submit" class="btn btn-success bg-green">Agregar Producto</button>
+                    
+                    <button type="submit" class="btn btn-success btn-rounded btn-fw mr-2">Agregar Producto</button>
                     <button class="btn btn-danger btn-rounded btn-fw">Limpiar Campos</button>
+
+                    
                   </form>
                 </div>
               </div>
+              <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Cantidad</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="28" disabled />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Costo Total</label>
+                          <div class="col-sm-9">
+                            <input class="form-control" placeholder="$128.000" disabled/>
+                          </div>
+                        </div>
+                      </div>
+                      
             </div>
 
             
@@ -161,4 +167,96 @@
         <div>
         </br>
       </br>
+       
+      <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card col-md-3 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ultimas Facturas</h4>
+              <p class="card-description">
+                ¡Visualiza las ultimas facturas!
+              </p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Cliente</th>
+                      <th>Id</th>
+                      <th>Fecha de Creacion</th>
+                      <th>Estado de Factura</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pablo</td>
+                      <td>53275531</td>
+                      <td>12 May 2022</td>
+                      <td><label class="badge badge-danger">Devolucion </label></td>
+                    </tr>
+                    <tr>
+                      <td>Camilo</td>
+                      <td>53275531</td>
+                      <td>23 Jun 2022</td>
+                      <td><label class="badge badge-warning">Esperando Conf</label></td>
+                    </tr>
+                    <tr>
+                      <td>Said</td>
+                      <td>53275531</td>
+                      <td>16 Jul 2022</td>
+                      <td><label class="badge badge-success">Finalizado</label></td>
+                    </tr>
+                    <tr>
+                      <td>Edinson</td>
+                      <td>53275531</td>
+                      <td>02 Gus 2022</td>
+                      <td><label class="badge badge-danger">Devolucion </label></td>
+                    </tr>
+                    <tr>
+                      <td>Brayan</td>
+                      <td>53275531</td>
+                      <td>23 Sep 2022</td>
+                      <td><label class="badge badge-warning">Esperando Conf</label></td>
+                    </tr>
+                    <tr>
+                      <td>Otro</td>
+                      <td>53275531</td>
+                      <td>23 Jun 2022</td>
+                      <td><label class="badge badge-success">Finalizado</label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  </div>
+  </div>
+
+        </br>
+      </br>
+        <script src="/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+ 
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script src="js/typeahead.bundle.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="/js/file-upload.js"></script>
+  <script src="/js/typeahead.js"></script>
+  <script src="/js/select2.js"></script>
+
+      
+    <!-- Llamada de Scripts del Proyecto-->
+
+   
         {{> footer }}   

@@ -10,7 +10,7 @@ const router= express.Router();
 //Ruta del dashboard
 router.get('/dashboard', (req,res) => {
     res.render('dashboard/dashboard.hbs');
-    console.log("CTRL C + CTRL V de Marlon")
+    
 });
 
 module.exports= router;

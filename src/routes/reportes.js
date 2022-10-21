@@ -10,7 +10,6 @@ const router= express.Router();
 //Ruta de la pagina vista de facturas en general
 router.get('/reportes', (req,res) => {
     res.render('reportes/reporte');
-    console.log("Ya que nadie cojio reportes, lo tomo yo!");
 });
 
 module.exports= router;

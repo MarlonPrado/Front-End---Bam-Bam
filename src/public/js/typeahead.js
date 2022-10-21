@@ -22,9 +22,9 @@
     };
   };
 
-  var states = ['CocaCola', 'Arroz', 'Aceite', 'Harina', 'Azucar','JuanEsGordo',
-    'Cafe', 'Spaguetti', 'Panela', 'Atun', 'Pollo', 'Cerdo', 'Res', 'EdinsonMaricon'
-    , 'Edinson', 'Quesaidilla'
+  var states = ['CocaCola', 'Arroz', 'Aceite', 'Harina', 'Azucar','Manzana',
+    'Cafe', 'Spaguetti', 'Panela', 'Atun', 'Pollo', 'Cerdo', 'Res', 'Macarron'
+    , 'Mantequilla', 'Quesaidilla'
   ];
 
   $('#the-basics .typeahead').typeahead({

@@ -10,7 +10,7 @@ const router= express.Router();
 //Ruta de la pagina vista de facturas en general
 router.get('/factura', (req,res) => {
     res.send('bienvenido a zona de facturacion');
-    console.log("Aqui ira el mockup en .svg del Padrino")
+    
 });
 
 //Ruta de Agregar productos a una factura especifica

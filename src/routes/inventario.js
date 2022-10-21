@@ -10,20 +10,40 @@ const router= express.Router();
 //Ruta de la pagina vista de facturas en general
 router.get('/inv', (req,res) => {
     res.send('bienvenido a zona de facturacion');
-    console.log("el Dios Brayan con su chad-form melo, simplemente un acarreador number uan")
+   
 });
 
 //Agregar un producto al inventario
 router.get('/agregarproducto', (req,res) => {
-    res.render('inventario/Agregarproducto.hbs');
-    console.log("el Dios Brayan con su chad-form melo, simplemente un acarreador number uan")
+    res.render('inventario/Agregarproducto.hbs', {style: '/css/style.css'});
+   
 });
 
 //Visualiza el inventario
-router.get('/verinventario', (req,res) => {
-    res.render('inventario/inventario.hbs');
+//router.get('/verinventario2', (req,res) => {
+  //  res.render('inventario/inventario (2).hbs');
+    
+//});
+
+//Visualiza el inventario
+router.get('/subinv', (req,res) => {
+    res.render('inventario/subirinventario.hbs');
     
 });
+
+
+//Visualiza el inventario
+router.get('/tabla', (req,res) => {
+    res.render('inventario/tabla.hbs');
+    
+});
+
+
+//Visualiza el inventario
+//router.get('/inventario', (req,res) => {
+  //  res.render('inventario/inventario.hbs');
+    
+//});
 
 
 module.exports= router;
