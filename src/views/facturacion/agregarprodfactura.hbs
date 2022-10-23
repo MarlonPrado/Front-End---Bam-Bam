@@ -15,6 +15,7 @@
   <link rel="shortcut icon" href="/img/favicon.png" />
 
 
+
 </head>
 <!-- partial -->
        <div class="main-panel">        
@@ -23,11 +24,13 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Agregar Productos a la Factura</h4>
-                  <form class="form-sample">
+                  <form class="form-sample needs-validation"  novalidate>
                     <p class="card-description">
                       A continuacion, llena el siguiente formulario con informacion de la Factura
                     </p>
-                  </br> <!-- XD-->
+                  </br> 
+
+                
                     <p class="card-description" bold>
                       <b> Informacion De Facturacion </b>
                     </p>
@@ -52,15 +55,28 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Cliente</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nombre del Cliente" required/>
+                            <input type="text" class="form-control" placeholder="Nombre del Cliente" id="idc"required/>
+                            <div class="valid-feedback">
+                            Nombre valido !
+                        </div>
+                          <div class="invalid-feedback">
+                            Parece que tienes caracteres o alfanumericos en el nombre
+                         </div>
                           </div>
                         </div>
+                        
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Vendedor</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nombre del Vendedor Responsable" required/>
+                            <input type="text" class="form-control" placeholder="Nombre del Vendedor Responsable" id="idv" required/>
+                              <div class="valid-feedback">
+                             ¡ Nombre valido !
+                        </div>
+                          <div class="invalid-feedback">
+                            Parece que tienes caracteres o alfanumericos en el vendedor
+                         </div>
                           </div>
                         </div>
                       </div>
@@ -87,59 +103,77 @@
                       <div class="col-md-6">
                       <div class="form-group">
                         <label for="exampleTextarea1">Descripcion del Pedido</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)" required></textarea>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)" ></textarea>
+                        <div class="valid-feedback">
+                            Una breve descripcion, es opcional esta descripcion
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Fecha Asentado</label>
                         <div class="col-sm-9">
-                          <input class="form-control" placeholder="13/10/2022 required" />
+                          <input class="form-control" type="date"  value="2001-12-23"/>
                         </div>
                         
                       </div>
                     </div>
                     </div>
-                    <p class="card-description col-md-3 offset-md-3" bold>
+                    <p class="card-description col-md-3 offset-md-3 pd-12" bold>
                       <b> Gestion Del pedido del Cliente </b>
                     </p>
                     <div class="row">
-                      <div class="col-md-6 col-md-3 offset-md-3">
+                      <div class="col-md-6 col-md-3 offset-md-3 col-pd-12">
                       <div class="form-group row">
                         <div class="col">
                           <label>Producto</label>
-                          <div id="the-basics">
-                            <input class="typeahead" type="text" placeholder="Digita" required>
+                          <div id="the-basics" class="col-sm-18">
+                            <input class="typeahead" type="text" placeholder="Digita" id="idp"  required>
+                            <div class="valid-feedback">
+                            Producto existente
+                        </div>
+                          <div class="invalid-feedback">
+                            digita un producto
+                         </div>
                           </div>
                         </div>
                         <div class="col">
                           <label>Cantidad</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Cuanto" required>
+                          <div class="col-sm-18">
+                            <input type="number" class="form-control" placeholder="Cuanto" id="idctd" required>
+                              <div class="valid-feedback">
+                            Cantidad ingresada
+                        </div>
+                          <div class="invalid-feedback">
+                           Digita un numero
+                         </div>
                           </div>
                         </div>
 
                         <div class="col">
                           <label>Valor</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Como"  required />
+                          <div  class="col-sm-18">
+                            <input type="number" class="form-control" placeholder="Como"  id="idpre" required />
+                             <div class="valid-feedback">
+                            Valor ingresada
+                        </div>
+                          <div class="invalid-feedback">
+                           Digita un numero
+                         </div>
                           </div>
                         </div>
                         
                       </div>
+                      <button class="btn btn-success btn-rounded btn-fw"  onclick="verif()">Agregar Producto</button>
+                       <button class="btn btn-danger btn-rounded btn-fw">Limpiar Campos</button>
                       </div>
+                    </div>
                     
-                    
+                 
                    
-                    
-                    <button type="submit" class="btn btn-success btn-rounded btn-fw mr-2">Agregar Producto</button>
-                    <button class="btn btn-danger btn-rounded btn-fw">Limpiar Campos</button>
-
-                    
-                  </form>
-                </div>
-              </div>
-              <div class="row">
+</br>
+          
+<div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Cantidad</label>
@@ -158,70 +192,85 @@
                       </div>
                       
             </div>
+           
+                  </form>
+                </div>
+              </div>
+              
+            
 
             
       
-  
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <div>
-        </br>
-      </br>
-       
-      <div class="row">
-        <div class="col-lg-6 grid-margin stretch-card col-md-3 offset-md-3">
+<div class="main-panel" >  
+  <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+        <div class="col-lg-12 grid-margin long-card col-md-3 offset-md-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Ultimas Facturas</h4>
+              <h4 class="card-title">Productos de la factura</h4>
               <p class="card-description">
-                ¡Visualiza las ultimas facturas!
+                ¡Visualiza todos los productos de la factura!
               </p>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Cliente</th>
-                      <th>Id</th>
-                      <th>Fecha de Creacion</th>
-                      <th>Estado de Factura</th>
+                      <th>Nombre del Producto</th>
+                      <th>Cantidad</th>
+                      <th>Valor</th>
+                      <th>Accion</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Pablo</td>
-                      <td>53275531</td>
-                      <td>12 May 2022</td>
-                      <td><label class="badge badge-danger">Devolucion </label></td>
+                      <td>Gaseosa Pepsi</td>
+                      <td>12</td>
+                      <td>$1.400</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                     <tr>
-                      <td>Camilo</td>
-                      <td>53275531</td>
-                      <td>23 Jun 2022</td>
-                      <td><label class="badge badge-warning">Esperando Conf</label></td>
+                      <td>Arroz Diana</td>
+                      <td>1</td>
+                      <td>$3.500</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                     <tr>
-                      <td>Said</td>
-                      <td>53275531</td>
-                      <td>16 Jul 2022</td>
-                      <td><label class="badge badge-success">Finalizado</label></td>
+                      <td>Atun Economox</td>
+                      <td>2</td>
+                      <td>$3.500</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                     <tr>
-                      <td>Edinson</td>
-                      <td>53275531</td>
-                      <td>02 Gus 2022</td>
-                      <td><label class="badge badge-danger">Devolucion </label></td>
+                     <td>Aceite Cocina 1L</td>
+                      <td>3</td>
+                      <td>$4.500</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                     <tr>
-                      <td>Brayan</td>
-                      <td>53275531</td>
-                      <td>23 Sep 2022</td>
-                      <td><label class="badge badge-warning">Esperando Conf</label></td>
+                      <td>Jabon Dove</td>
+                      <td>1</td>
+                      <td>$7.900</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                     <tr>
-                      <td>Otro</td>
-                      <td>53275531</td>
-                      <td>23 Jun 2022</td>
-                      <td><label class="badge badge-success">Finalizado</label></td>
+                      <td>Salmon Fresco</td>
+                      <td>3</td>
+                      <td>$1.500</td>
+                      <td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Eliminar Producto
+</button> </td>
                     </tr>
                   </tbody>
                 </table>
@@ -229,6 +278,42 @@
             </div>
           </div>
         </div>
+            
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmacion de Eliminacion del Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estas seguro de eliminar el producto "XXXXX" con un total de "XXXXX"?
+        Esta accion es <b>Irreversible</b>, ¡confirma la accion!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Eliminar Producto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+              </div>
+  </div>
+</div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <div>
+        </br>
+      </br>
+       
+      
        
         <!-- partial -->
       </div>
@@ -236,7 +321,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
-  </div>
+  
   </div>
 
         </br>
@@ -255,7 +340,10 @@
   <script src="/js/typeahead.js"></script>
   <script src="/js/select2.js"></script>
 
-      
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/js/notificacion.js"></script>
+  <script src="/js/ventana.js"></script>
+  <script src="/js/smsvalidacion.js"></script>
     <!-- Llamada de Scripts del Proyecto-->
 
    
