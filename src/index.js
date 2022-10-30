@@ -5,6 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
 const path = require('path');
+const passport = require('passport');
 
 //Inicializacion de Express
 const app = express();
@@ -32,10 +33,14 @@ app.use(morgan('dev')); //<-- Comando por consola
 app.use(express.urlencoded({extended: false})); //<-- algo de validacion de formularios :v
 app.use(express.json()); //<-- Modulo de gestion de JSON de Express
 
+app.use(passport.initialize()); //<-- Inicializacion de Passport
+app.use(passport.session()); //<-- Inicializacion de Passport
+
+
+// inicializa
+require('./lib/passport');
 //Variables Globales
-app.use((req,res,next) =>{
-    next();
-});
+
 
 //Rutas del servidor
 
@@ -53,5 +58,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(app.get('port'), ()=>{
     console.log('Servidor en el puerto', app.get('port')); 
 })
-
 

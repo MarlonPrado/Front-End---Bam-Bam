@@ -1,5 +1,6 @@
 //Llamando a Express JS
 const express = require('express');
+const passport = require('passport');
 
 //Llamando al modulo de Routers de Express
 
@@ -10,5 +11,16 @@ router.get('/', (req,res) => {
     res.render('auth/login')
    
 });
+
+router.post('/', passport.authenticate('local.login', {
+    
+        successRedirect: '/dashboard',
+        failureRedirect: '/',
+        
+    }));
+
+
+
+
 
 module.exports= router;
