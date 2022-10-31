@@ -22,10 +22,17 @@
     };
   };
 
+
+  //Productos 
   var states = ['CocaCola', 'Arroz', 'Aceite', 'Harina', 'Azucar','Manzana',
     'Cafe', 'Spaguetti', 'Panela', 'Atun', 'Pollo', 'Cerdo', 'Res', 'Macarron'
     , 'Mantequilla', 'Quesaidilla'
   ];
+
+
+  //Nombres ¿LA CC ES NECESARIA?
+  var states2 = ['Edinson', 'Juan', 'marlon'
+];
 
   $('#the-basics .typeahead').typeahead({
     hint: true,
@@ -41,6 +48,22 @@
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     // `states` is an array of state names defined in "The Basics"
     local: states
+  });
+
+  $('#the-basics2 .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  }, {
+    name: 'states',
+    source: substringMatcher(states2)
+  });
+  // constructs the suggestion engine
+  var states2 = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    // `states` is an array of state names defined in "The Basics"
+    local: states2
   });
 
   $('#bloodhound .typeahead').typeahead({

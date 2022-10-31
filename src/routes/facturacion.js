@@ -14,8 +14,20 @@ router.get('/factura', (req,res) => {
 });
 
 //Ruta de Agregar productos a una factura especifica
-router.get('/agregarprodfactura', (req,res) => {
-    res.render('facturacion/agregarprodfactura');
+router.get('/agregarprodfacturafc', (req,res) => {
+    res.render('facturacion/agregarprodfacturafc');
+   
+}); 
+
+//Ruta de Agregar productos a una factura especifica
+router.get('/agregarprodfacturadevfv', (req,res) => {
+    res.render('facturacion/agregarprodfacturadevfv');
+   
+});
+
+//Ruta de Agregar productos a una factura especifica
+router.get('/agregarprodfacturafv', (req,res) => {
+    res.render('facturacion/agregarprodfacturafv');
    
 });
 
