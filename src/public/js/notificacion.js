@@ -10,6 +10,16 @@ function verif(){
     } else {
         swal ( "Genial" ,  "Producto Agregado" ,  "success" )
     }
+
+
+     
+    var boton_de_calcular = document.getElementById("boton_calc");
+    boton_de_calcular.addEventListener("click", res);
+
+    function res() {
+        var multi = idctd.value  * idpre.value;
+        document.getElementById("esuma").innerHTML=multi;
+    }
 }
 
 function verif2(){
@@ -23,5 +33,19 @@ function verif2(){
 
     } else {
         swal ( "Genial" ,  "Producto Modificado" ,  "success" )
+    }
+}
+
+
+function verif3(){
+   
+  
+    var idnoml = document.getElementById("idnoml").value;
+    var idctd3= document.getElementById("idctd3").value;
+    if ( idnoml == ""|| idctd3 == "") {
+        swal ( "ups!" ,  "¡Datos de Modificacion erroneos! verifica los campos del lote" ,  "error" )
+
+    } else {
+        swal ( "Genial" ,  "Lote Agregado" ,  "success" )
     }
 }
