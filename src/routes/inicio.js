@@ -1,10 +1,10 @@
 //Llamando a Express JS
-const express = require('express');
-const passport = require('passport');
+const express = require("express");
+const {body} = require("express-validator");
+const router = express.Router();
+const passport = require("passport");
+const { isLoggedIn, isNotLoggedIn } = require("../lib/authentication"); 
 
-//Llamando al modulo de Routers de Express
-
-const router= express.Router();
 
 //Ruta de la pagina inicial(Login del usuario)
 router.get('/', (req,res) => {
@@ -12,12 +12,13 @@ router.get('/', (req,res) => {
    
 });
 
-router.post('/', passport.authenticate('local.login', {
-    
-        successRedirect: '/dashboard',
-        failureRedirect: '/',
-        
-    }));
+router.post('/signin', (req, res,next )=>{
+    passport.authenticate('local.signin', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/',
+    failureFlash: true
+    })(req,res,next)
+ });
 
 
 
