@@ -31,16 +31,5 @@ router.get('/agregarprodfacturafv', (req,res) => {
    
 });
 
-//Ruta de interfaz de visualizar todas las facturas
-router.get('/verfacturas', (req,res) => {
-    res.render('facturacion/verfactura');
-  
-});
-
-//Ruta de interfaz de visualizar todas las facturas
-router.get('/crearfactura', (req,res) => {
-    res.render('facturacion/crearfactura');
-  
-});
 
 module.exports= router;

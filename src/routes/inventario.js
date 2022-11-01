@@ -1,4 +1,4 @@
-//Rutas de la zona de F A C T U R A C I O N
+//Rutas de la zona de inventario
 
 //Llamando a Express JS
 const express = require('express');
@@ -7,11 +7,6 @@ const express = require('express');
 
 const router= express.Router();
 
-//Ruta de la pagina vista de facturas en general
-router.get('/inv', (req,res) => {
-    res.send('bienvenido a zona de facturacion');
-   
-});
 
 //Agregar un producto al inventario
 router.get('/agregarproducto', (req,res) => {
@@ -19,31 +14,18 @@ router.get('/agregarproducto', (req,res) => {
    
 });
 
-//Visualiza el inventario
-//router.get('/verinventario2', (req,res) => {
-  //  res.render('inventario/inventario (2).hbs');
-    
-//});
-
-//Visualiza el inventario
-router.get('/subinv', (req,res) => {
-    res.render('inventario/subirinventario.hbs');
-    
-});
 
 
 //Visualiza el inventario
 router.get('/tabla', (req,res) => {
-    res.render('inventario/tabla.hbs');
-    
+  res.render('inventario/tabla.hbs');
+  
 });
 
-
-//Visualiza el inventario
-//router.get('/inventario', (req,res) => {
-  //  res.render('inventario/inventario.hbs');
+//Subir el inventario
+router.get('/subirinventario', (req,res) => {
+    res.render('inventario/subirinventario.hbs');
     
-//});
-
+});
 
 module.exports= router;

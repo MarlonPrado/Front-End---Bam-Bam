@@ -7,11 +7,6 @@ const express = require('express');
 
 const router= express.Router();
 
-//Ruta de la pagina vista de reportes en general
-router.get('/reporte', (req,res) => {
-    res.render('reportes/reporte.hbs');
-});
-
 //Ruta de la pagina de agregar cliente tercero
 router.get('/agregarcliente', (req,res) => {
     res.render('terceros/agregarcliente');
