@@ -22,6 +22,12 @@ router.get('/agregarprovedor', (req,res) => {
     res.render('terceros/agregarprovedor');
 });
 
+router.post('/reportes', (req,res) => {
+    console.log(req.body);
+    console.log(JSON.stringify(req.body));
+});
+
+
 //Ruta de la pagina de agregar auxdeventa tercero
 router.get('/agregarauxdeventas', (req,res) => {
     res.render('terceros/agregarauxdeventas');
