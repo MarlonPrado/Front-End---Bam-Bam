@@ -1,0 +1,755 @@
+{{> navbar-sidebar }}
+
+<head>
+
+
+  <link rel="stylesheet" href="/css/typicons.css">
+  <link rel="stylesheet" href="/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/radioinput.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/img/favicon.png" />
+
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- Line Awesome CDN Link -->
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+
+</head>
+<main >
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Agregar Productos a la Factura</h4>
+        <form class="form-sample needs-validation" action="/formagregarprodfacturafc" method="post" id="formulariofactura" novalidate>
+          <p class="card-description">
+            A continuacion, llena el siguiente formulario con informacion de la Factura
+          </p>
+          </br>
+
+
+          <p class="card-description" bold>
+            <b> Informacion De Facturacion </b>
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Codigo</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="10001" value="001" name="codigof" id="codigof"  readonly />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Fecha Creado</label>
+                <div class="col-sm-9">
+                  <input class="form-control" placeholder="2013-01-01T12:00" disabled value="2013-01-01T12:00" name="fechac" id="fechac" readonly />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Cliente</label>
+                <div id="the-basics2" class="col-sm-9">
+                  <input class="typeahead" type="text" placeholder="Digita" id="idc" name="idc"   >
+                  <div class="valid-feedback">
+                    Producto existente
+                  </div>
+                  <div class="invalid-feedback">
+                    digita un producto
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Cedula</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" placeholder="1193551182" id="cc" name="cc" value="1193551182" readonly />
+                  <div class="valid-feedback">
+                    ¡ Nombre valido !
+                  </div>
+                  <div class="invalid-feedback">
+                    Parece que tienes caracteres o alfanumericos en el vendedor
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Tipo de Factura </label>
+                <div class="col-sm-9">
+                  <select class="form-control"   id="tf" readonly>
+                    <option name="tf" value="FC">FC</option>
+                    <option name="tf" value="FV">FV</option>
+                    <option name="tf" value="DC">DC</option>
+                    <option name="tf" value="DV">DV</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Vendedor</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="Auxiliar X" id="nombrev" name="nombrev" readonly />
+                  <div class="valid-feedback">
+                    ¡ Nombre valido !
+                  </div>
+                  <div class="invalid-feedback">
+                    Parece que tienes caracteres o alfanumericos en el vendedor
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">lote</label>
+                <div class="col-sm-9">
+                  <select class="form-control" name="lote" id="lote"> </select>
+                </div>
+              </div>
+            </div>
+
+            
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleTextarea1">Descripcion del Pedido</label>
+                <textarea class="form-control" id="exampleTextarea1" id="descp" rows="4" name="descp"
+                  placeholder="Ingresa una breve descripcion (Compra al por mayor, Devolucion, Venta unitaria..)"></textarea>
+                <div class="valid-feedback">
+                  Una breve descripcion, es opcional esta descripcion
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Fecha Asentado</label>
+                <div class="col-sm-9">
+                  <input class="form-control" type="date" value="2001-12-23" id="fasentado" name="fasentado" readonly/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="card-description col-md-3 offset-md-3 pd-12" bold>
+            <b> Agregar Productos A la Factura </b>
+          </p>
+          <div class="row">
+            <div class="offset-md-3 col-pd-12" style="
+    margin-left: 36px;
+    margin-right: 36px;
+">
+              <div class="form-group row">
+                <div class="col">
+                  <label>Nombre</label>
+                  <div id="the-basics" class="col-sm-18">
+                    <input input type="text" class="form-control"  placeholder="Digita" id="nombrep"  name="nombrep" maxlength="255" required >
+                    <div class="valid-feedback">
+                      Producto existente
+                    </div>
+                    <div class="invalid-feedback">
+                      digita un producto
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <label>ID-Producto</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="articuloid" aria-placeholder="123456" value="123"  name="articuloid" readonly >
+                    <div class="valid-feedback">
+                     Articulo Id Generado
+                    </div>
+                    <div class="invalid-feedback">
+                      Error!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <label>Precio de Compra</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="precioc" placeholder="Compra" name="precioc" min="0"  required >
+                    <div class="valid-feedback">
+                     Precio de Compra Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!, dato vacio o incorrecto, verifica los campos  
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <label>Precio de Venta</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="preciov" placeholder="Venta" name="preciov" min="0"   required >
+                    <div class="valid-feedback">
+                     Precio de Venta Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!, dato vacio o precio de compra/venta erroneos, verifica
+                    </div>
+                  </div>
+                </div>
+                
+
+
+
+              
+                 <div class="col">
+                  <label>Compra de Paquete</label>
+                    <div class="form-check form-check-primary">
+                  
+                            <label class="form-check-label">
+                              
+                             
+                              <input type="hidden" value="0"  id="comprapack2" name="comprapack2">
+                               <input type="checkbox" class="form-check-input"  id="comprapack" name="comprapack" >
+                              Es un paquete de Compra
+                            </label>
+                         
+                          
+                          </div>
+                 </div>
+                          </div>
+                 
+
+             
+
+              <div class="form-group row">
+                <div class="col">
+                  <label>Paquete</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantpack"    name="cantpack" min="0" required  >
+                    <div class="valid-feedback">
+                    Luce bien
+                    </div>
+                    <div class="invalid-feedback">
+                      Error! datos vacios o olvidaste verificar la apertura de paquetes
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col">
+                  <label>Sucursal</label>
+                  <div class="col-sm-18">
+                    <input type="text" class="form-control"  id="sucid"  value="Principal" placeholder="Principal" name="sucid" minlength="0" readonly >
+                    <div class="valid-feedback">
+                    Luce bien
+                    </div>
+                    <div class="invalid-feedback">
+                      Error! Sucursal Invalida
+                    </div>
+                  </div>
+                </div>
+
+                
+                
+              
+
+                <div class="col">
+                  <label>Cantidad Minima</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantmax"  name="cantmax" minlength="0" required >
+                    <div class="valid-feedback">
+                    Esta bien
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!,campos vacios
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <label>Cantidad Maxima</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantmin"  name="cantmin" minlength="0"  required >
+                    <div class="valid-feedback">
+                     Precio de Venta Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!,campos vacios
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <label>Disponibilidad</label>
+                    <div class="col-sm-18">
+                      <div class="form-check form-check-success">
+                  
+                            <label class="form-check-label">
+                              
+                             
+                              <input type="hidden" value="0" name="activo2">
+                               <input type="checkbox" class="form-check-input"  id="activo" name="activo" checked >
+                              Producto Activo
+                            </label>
+                         
+                          
+                          </div>
+                       
+                          </div>
+                 </div>
+                
+
+
+
+              
+              </div>
+                
+          
+
+              <button class="btn btn-success btn-rounded btn-fw" >Agregar Producto</button>
+              <button class="btn btn-danger btn-rounded btn-fw">Limpiar Campos</button>
+            
+
+        </form>
+      </div></div>
+          </br>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Cantidad</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="28" disabled />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Costo Total</label>
+                <div class="col-sm-9">
+                  <input class="form-control" placeholder="$128.000" disabled />
+                </div>
+              </div>
+            </div>
+           
+
+          </div>
+
+        
+      </div>
+    </div>
+    </br>
+    <div class="main-panel" style="width: calc(100% - 23px);" >
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12 grid-margin long-card col-md-3 offset-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Productos de la factura</h4>
+                    <p class="card-description">
+                      ¡Visualiza todos los productos de la factura!
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Articulo ID</th>
+                            <th>Nombre del Producto</th>
+                            <th>Cantidad</th>
+                            
+                            <th>Precio de Compra</th>
+                            <th>Precio de Venta</th>
+                            <th>Lote</th>
+                            <th>Accion</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                          <tr>
+                            <td>00001</td>
+                            <td>Arroz Diana</td>
+                            <td>28</td>
+                            <td>$2.500</td>
+                            <td>$3.700</td>
+                            <td>SUCID</td>
+                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text " data-toggle="modal"
+                                data-target="#exampleModal2">
+                                Editar Producto
+                              </button> </td>
+                               <td><button type="button" class="btn btn-danger btn-sm btn-icon-text" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Eliminar Producto
+                              </button> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirmacion de Eliminacion del Producto</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ¿Estas seguro de eliminar el producto "XXXXX" con un total de "XXXXX"?
+                      Esta accion es <b>Irreversible</b>, ¡confirma la accion!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Eliminar Producto</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal -->
+
+
+
+              <!-- Modal de Edicion de prod factura-->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Ten en cuenta que editar producto implica consultar items que pueden que ya no esten en el
+                      inventario, <b>ok!</b>
+                    </div>
+                    <form>
+                      <div class="form-group row">
+                <div class="col">
+                  <label>Nombre</label>
+                  <div id="the-basics" class="col-sm-18">
+                    <input input type="text" class="form-control"  placeholder="Digita" id="nombrep"  name="nombrep" maxlength="255" required >
+                    <div class="valid-feedback">
+                      Producto existente
+                    </div>
+                    <div class="invalid-feedback">
+                      digita un producto
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <label>ID-Producto</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="articuloid" aria-placeholder="123456" value="123"  name="articuloid" readonly >
+                    <div class="valid-feedback">
+                     Articulo Id Generado
+                    </div>
+                    <div class="invalid-feedback">
+                      Error!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <label>Precio de Compra</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="precioc" placeholder="Compra" name="precioc" min="0"  required >
+                    <div class="valid-feedback">
+                     Precio de Compra Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!, dato vacio o incorrecto, verifica los campos  
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <label>Precio de Venta</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="preciov" placeholder="Venta" name="preciov" min="0"   required >
+                    <div class="valid-feedback">
+                     Precio de Venta Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!, dato vacio o precio de compra/venta erroneos, verifica
+                    </div>
+                  </div>
+                </div>
+                
+
+
+
+              
+                 <div class="col">
+                  <label>Compra de Paquete</label>
+                    <div class="form-check form-check-primary">
+                  
+                            <label class="form-check-label">
+                              
+                             
+                              <input type="hidden" value="0"  id="comprapack2" name="comprapack2">
+                               <input type="checkbox" class="form-check-input"  id="comprapack" name="comprapack" >
+                              Es un paquete de Compra
+                            </label>
+                         
+                          
+                          </div>
+                 </div>
+                          </div>
+                 
+
+             
+
+              <div class="form-group row">
+                <div class="col">
+                  <label>Paquete</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantpack"    name="cantpack" min="0" required  >
+                    <div class="valid-feedback">
+                    Luce bien
+                    </div>
+                    <div class="invalid-feedback">
+                      Error! datos vacios o olvidaste verificar la apertura de paquetes
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="col">
+                  <label>Sucursal</label>
+                  <div class="col-sm-18">
+                    <input type="text" class="form-control"  id="sucid"  value="Principal" placeholder="Principal" name="sucid" minlength="0" readonly >
+                    <div class="valid-feedback">
+                    Luce bien
+                    </div>
+                    <div class="invalid-feedback">
+                      Error! Sucursal Invalida
+                    </div>
+                  </div>
+                </div>
+
+                
+                
+              
+
+                <div class="col">
+                  <label>Cantidad Minima</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantmax"  name="cantmax" minlength="0" required >
+                    <div class="valid-feedback">
+                    Esta bien
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!,campos vacios
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <label>Cantidad Maxima</label>
+                  <div class="col-sm-18">
+                    <input type="number" class="form-control"  id="cantmin"  name="cantmin" minlength="0"  required >
+                    <div class="valid-feedback">
+                     Precio de Venta Ingresado correctamente
+                    </div>
+                    <div class="invalid-feedback">
+                      ¡Error!,campos vacios
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <label>Disponibilidad</label>
+                    <div class="col-sm-18">
+                      <div class="form-check form-check-success">
+                  
+                            <label class="form-check-label">
+                              
+                             
+                              <input type="hidden" value="0" name="activo2">
+                               <input type="checkbox" class="form-check-input"  id="activo" name="activo" checked >
+                              Producto Activo
+                            </label>
+                         
+                          
+                          </div>
+                       
+                          </div>
+                 </div>
+                
+
+
+
+              
+              </div>
+                
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" onclick="verif2()">Modificar Producto</button>
+                          </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <!-- Modal de Edicion de prod factura-->
+
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="js/typeahead.bundle.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="/js/file-upload.js"></script>
+    <script src="/js/typeahead.js"></script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="/js/ventana.js"></script>
+<script src="/js/smsvalidacion.js"></script>
+<script src="/js/notificacion.js"></script>
+    <script src="/js/inputLote.js"></script>
+
+    <!-- Llamada de Scripts del Proyecto-->
+    </body>
+
+
+    {{> footer }}
+
+    </html>
