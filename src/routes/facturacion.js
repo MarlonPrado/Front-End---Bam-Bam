@@ -21,8 +21,24 @@ router.get('/factura', (req,res) => {
 });
 
 //Ruta de Agregar productos a una factura especifica
-router.get('/agregarprodfacturafc', (req,res) => {
-   // fetch('https://api.github.com/users/manishmshiva')
+router.get('/agregarprodfacturafc',async  (req,res) => {
+   var  resultado = await fetch('http://localhost:3000/articulo/1/**')
+
+   resultado = await resultado.json();
+
+    if(resultado.OSUCCESS==1){
+        const datos = resultado
+        console.log(datos );
+        res.render('facturacion/agregarprodfacturafc', {datos});
+        //for(let i=0; i < resultado.DATA.length ; i++ ){
+    //console.log(resultado.DATA[i]);
+}
+
+else{
+    console.log("Fallo, algo fallo")
+    res.render('facturacion/agregarprodfacturafc');
+}
+
     // Exito
     // .then(response => response.json())  // convertir a json
    //  .then(json => console.log(json))    //imprimir los datos en la consola
@@ -31,7 +47,7 @@ router.get('/agregarprodfacturafc', (req,res) => {
     
     
 
- res.render('facturacion/agregarprodfacturafc');
+
    
 }); 
 
