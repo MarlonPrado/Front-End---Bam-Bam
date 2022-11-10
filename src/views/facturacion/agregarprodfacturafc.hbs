@@ -27,13 +27,14 @@
 
 </head>
 <main>
+  
  {{#each  datos.DATA }}
  <p> Dinni Dinni</p></br>
   {{/each }}
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Agregar Productos a la Factura</h4>
+        <h4 class="card-title">Agregar Productos a la Factura de Compra</h4>
         <form class="form-sample needs-validation" action="/formagregarprodfacturafc" method="post" id="formulariofactura" novalidate>
           <p class="card-description">
             A continuacion, llena el siguiente formulario con informacion de la Factura
@@ -67,10 +68,10 @@
                 <div id="the-basics2" class="col-sm-9">
                   <input class="typeahead" type="text" placeholder="Digita" id="idc" name="idc"   >
                   <div class="valid-feedback">
-                    Producto existente
+                    Cliente existente
                   </div>
                   <div class="invalid-feedback">
-                    digita un producto
+                    digita un Cliente
                   </div>
                 </div>
               </div>
