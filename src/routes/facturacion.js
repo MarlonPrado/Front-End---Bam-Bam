@@ -103,4 +103,37 @@ router.get('/agregarprodfacturafv', (req, res) => {
 });
 
 
+// ########################################
+router.get('/usuario', async(req, res) => {
+     resultado = await fetch('http://localhost:3000/tercero/1/**')
+
+   resultado = await resultado.json();
+
+    if(resultado.OSUCCESS==1){
+        const datos = resultado
+        console.log(datos );
+        res.render('terceros/usuario', {datos});
+        //for(let i=0; i < resultado.DATA.length ; i++ ){
+    //console.log(resultado.DATA[i]);
+}
+
+else{
+    console.log("Fallo, algo fallo")
+    res.render('terceros/usuario');
+    }
+
+    // Exito
+    // .then(response => response.json())  // convertir a json
+    //  .then(json => console.log(json))    //imprimir los datos en la consola
+    //   .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
+
+
+
+
+
+
+});
+
+
+
 module.exports = router;

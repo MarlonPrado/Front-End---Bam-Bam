@@ -38,7 +38,7 @@ main{
 form{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   flex-wrap: wrap;
 }
 .form-grid--wrapper{

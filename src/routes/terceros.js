@@ -23,8 +23,5 @@ router.get('/agregarauxdeventas', (req,res) => {
 });
 
 
-router.get('/modificartercero', (req,res) => {
-    res.render('terceros/modificartercero.hbs');
-});
 
 module.exports= router;

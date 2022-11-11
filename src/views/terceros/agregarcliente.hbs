@@ -13,11 +13,6 @@
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="/img/favicon.png" />
 
-<!-- Libreria de TailWinds CSS-->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-   
-
   
 
     <!-- CSS de Reportes -->
@@ -31,136 +26,63 @@
 
 
 </head>
+ <div class="content-wrapper">
+          <div class="row">
 <div class="main-panel">
-              
-                    <div class="card">
-                        <section class=" px-8 my-1 flex flex-wrap  ">
-                            <!-- FORMULARIO DE AGREGAR INVENTARIO  -->
-                            <form action="#" method="POST">
-                                <div class=" overflow-hidden drop-shadow-2xl sm:rounded-md">
-                                    <h1 class="text-lg font-semibold text-white-600 text-center">AGREGAR PRODUCTO</h1>
-                                    <div class="bg-white px-14s  sm:p-6">
-                                        <div class="grid grid-cols-6 gap-6">
-
-                                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                                <label for="city"
-                                                    class="block text-sm font-medium text-gray-700">Codigo</label>
-                                                <input type="number" name="city" id="city" autocomplete="address-level2"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="region"
-                                                    class="block text-sm font-medium text-gray-700">Grupo</label>
-                                                <input type="text" name="region" id="region"
-                                                    autocomplete="address-level1"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal-code"
-                                                    class="block text-sm font-medium text-gray-700">Fecha</label>
-                                                <input type="date" name="postal-code" id="postal-code"
-                                                    autocomplete="postal-code"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name"
-                                                    class="block text-sm font-medium text-gray-700">Producto</label>
-                                                <input type="text" name="first-name" id="first-name"
-                                                    autocomplete="given-name"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name"
-                                                    class="block text-sm font-medium text-gray-700">Activo</label>
-                                                <input type="text" name="last-name" id="last-name"
-                                                    autocomplete="family-name"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name"
-                                                    class="block text-sm font-medium text-gray-700">Cantidad
-                                                    Minima </label>
-                                                <input type="text" name="first-name" id="first-name"
-                                                    autocomplete="given-name"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name" class="block text-sm font-medium text-gray-700">
-                                                    Cantidad Maxima </label>
-                                                <input type="text" name="last-name" id="last-name"
-                                                    autocomplete="family-name"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                                <label for="city" class="block text-sm font-medium text-gray-700">Precio
-                                                    Compra</label>
-                                                <input type="number" name="city" id="city" autocomplete="address-level2"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="region"
-                                                    class="block text-sm font-medium text-gray-700">Precio
-                                                    Venta</label>
-                                                <input type="number" name="region" id="region"
-                                                    autocomplete="address-level1"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal-code"
-                                                    class="block text-sm font-medium text-gray-700">Cantidad</label>
-                                                <input type="number" name="postal-code" id="postal-code"
-                                                    autocomplete="postal-code"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                                <label for="city" class="block text-sm font-medium text-gray-700">Compra
-                                                    De Paquetes</label>
-                                                <input type="number" name="city" id="city" autocomplete="address-level2"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="region"
-                                                    class="block text-sm font-medium text-gray-700">Cantidad
-                                                    Paquetes</label>
-                                                <input type="number" name="region" id="region"
-                                                    autocomplete="address-level1"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal-code"
-                                                    class="block text-sm font-medium text-gray-700">Sucursal</label>
-                                                <input type="number" name="postal-code" id="postal-code"
-                                                    autocomplete="postal-code"
-                                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- BOTON DE AGREGAR PRODUCTO   -->
-                                    <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                                        <button type="submit"
-                                            class="drop-shadow-2xl inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                                            Agregar </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
+          <div class="col-12 grid-margin stretch-card" style="align-items: left;
+">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Basic form elements</h4>
+                  <p class="card-description">
+                    Basic form elements
+                  </p>
+                  <form class="forms-sample" >
+                    <div class="form-group">
+                      <label for="exampleInputName1">Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail3">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword4">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Gender</label>
+                        <select class="form-control" id="exampleSelectGender">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                      </div>
+                    <div class="form-group">
+                      <label>File upload</label>
+                      <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputCity1">City</label>
+                      <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Textarea</label>
+                      <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+             </div>
+            </div>
 </div>
 
  
